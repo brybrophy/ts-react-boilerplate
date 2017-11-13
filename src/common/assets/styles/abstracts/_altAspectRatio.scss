@@ -1,0 +1,16 @@
+/* ALTERNATE ASPECT-RATIO */
+@mixin altAspect($ratio: 1 1, $selector: "> :first-child") {
+	$selector: unquote($selector);
+
+	padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1));
+	position: relative;
+
+	#{$selector} {
+		bottom: 0;
+		height: auto;
+		min-height: 100%;
+		left: 0;
+		position: absolute;
+		width: 100%;
+	}
+}

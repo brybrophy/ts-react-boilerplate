@@ -28,6 +28,7 @@ import renderView from './middleware/renderView';
 import definePort from './middleware/definePort';
 import enableLogging from './middleware/enableLogging';
 import useWebpack from './middleware/useWebpack';
+import RootStore from '../common/mobx/stores';
 
 const port = definePort();
 
@@ -90,8 +91,13 @@ app.get('/robots.txt', (req, res, next) => {
 
 // Send HTML file with bundle.js for all requests that make it this far
 app.use('/*', (req, res) => {
+	const rootStore = new RootStore();
+
+	rootStore.addOne();
+	rootStore.addOne();
+
 	res.setHeader('Content-Type', 'text-plain');
-	res.write(renderView(req));
+	res.write(renderView(req, rootStore));
 	res.end();
 });
 

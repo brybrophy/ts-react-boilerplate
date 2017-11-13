@@ -1,0 +1,46 @@
+$darkgrey:                  #252525;
+$grey:                      #363636;
+$upmidgrey:                 #555555;
+$midgrey:                   mix(white, $darkgrey, 50%);
+$lightgrey:                 mix(white, $darkgrey, 75%);
+$lightestgrey:              #F5F5F5;
+$trends-warmgrey:			#EEF0F3;
+$browngrey:                 #EBEBEB;
+$gold:                      #F1C629;
+$purple:                    #3d3370;
+$blue:						#337AB7;
+
+$warning:					#F73B00;
+
+$map-fill:									#FFFFFF;
+$map-stroke:								#C2C2C2;
+$map-text:									#222222;
+$map-land:									#D9D9D9;
+$map-water:									#BABABA;
+
+@mixin carousel-screen {
+	background: rgba(85, 85, 85, .35);
+	background-blend-mode: multiply;
+}
+@mixin image-screen {
+	background: rgba(0, 0, 0, .25);
+	background-blend-mode: multiply;
+}
+@mixin carousel-screen-fade {
+	background: rgba(85, 85, 85, .35);
+	background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, .35) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, .35) 100%);
+	background: -o-linear-gradient(90deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, .35) 100%);
+	background: -ms-linear-gradient(90deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, .35) 100%);
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, .35) 100%);
+	background-blend-mode: multiply;
+}
+@mixin neighborhoods-screen-fade {
+	background: rgba(85, 85, 85, .35);
+	background: -moz-linear-gradient(0deg, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, 0) 80%);
+	background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, 0) 80%);
+	background: -o-linear-gradient(0deg, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, 0) 80%);
+	background: -ms-linear-gradient(0deg, rgba(0, 0, 0, .3) 0, rgba(0, 0, 0, 0) 80%);
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0) .3, rgba(0, 0, 0, 0) 80%);
+	background-blend-mode: multiply;
+}

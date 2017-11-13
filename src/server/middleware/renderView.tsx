@@ -2,20 +2,22 @@
 import { Request } from 'express';
 import * as React from 'react';
 import { renderToString } from 'react-dom/server';
-// import { Provider } from 'mobx-react';
-// import * as CircularJson from 'circular-json';
+import { Provider } from 'mobx-react';
+import * as CircularJson from 'circular-json';
 const hashedAssetsPaths = require('../config/webpack-assets.json');
 
 import { StaticRouter as Router } from 'react-router-dom';
 import Routes from '../../common/routes';
 
-export default function renderView(req: Request) {
+export default function renderView(req: Request, rootStore: any) {
 	const context = {};
 
 	const componentHTML = renderToString(
-		<Router location={req.originalUrl} context={context}>
-			<Routes />
-		</Router>
+		<Provider rootStore={rootStore}>
+			<Router location={req.originalUrl} context={context}>
+				<Routes />
+			</Router>
+		</Provider>
 	);
 
 	let HTML = `
@@ -42,6 +44,10 @@ export default function renderView(req: Request) {
         `;
 	} else {
 		HTML += `
+				<!-- Add initial mobx state to window object -->
+				<script>
+					window.__INITIAL_STATE__ = ${CircularJson.stringify({ rootStore: rootStore })};
+				</script>
                 </head>
                 <body>
                     <div id="root">${componentHTML}</div>

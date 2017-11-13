@@ -1,0 +1,1186 @@
+/* XXL */
+@media screen
+and (min-width: 2000px) {
+    .property-details-page {
+        .section-title-dark {
+            font-size: 7rem;
+        }
+
+        .agent-section {
+            p {
+                font-size: 2.5rem;
+                font-weight: 300;
+            }
+
+            .agent-info {
+                display: flex;
+                flex-direction: column;
+                width: 34vw;
+
+                button {
+                    margin-bottom: 150px;
+                }
+
+                img {
+                    margin-top: 170px;
+                }
+
+                p {
+                    &:last-of-type {
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+
+            .property-description {
+                width: 66vw;
+
+                hr {
+                    border-color: $lightgrey;
+                    border-width: 3px;
+                    margin: 100px 0 0 10%;
+                    width: 75px;
+                }
+
+                h3 {
+                    font-size: 2.4rem;
+                    font-weight: bold;
+                    margin: 10px 0 40px 10%;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    margin-bottom: 20px;
+                    margin-left: 10%;
+                    width: 75%;
+
+                    &:last-of-type {
+                        margin-bottom: 100px;
+                    }
+                }
+            }
+        }
+
+        .price-trends-section {
+            h3 {
+                font-size: 3.5rem;
+            }
+        }
+
+        .promotion-section {
+            .section-title-dark {
+                font-size: 6rem;
+            }
+
+            h2 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 3rem;
+            }
+        }
+
+        .property-gallery.related {
+            img {
+                max-height: 450px;
+            }
+
+            .gallery-large {
+                .slider-decorator-0, .slider-decorator-1 {
+                    button {
+                        height: 450px;
+                    }
+                }
+            }
+        }
+
+        .property-gallery-section {
+            .map-container, .property-info {
+                height: 500px;
+            }
+
+            .property-details {
+                .property-info {
+                    .price {
+                        font-size: 4rem;
+                        margin-bottom: 50px;
+                        margin-top: 40px;
+                    }
+
+                    h3 {
+                        font-size: 2.5rem;
+                        margin-bottom: 30px;
+
+                        &:last-of-type {
+                            margin-bottom: 50px;
+                        }
+                    }
+                }
+            }
+
+
+            .property-gallery-container {
+                height: 1000px;
+
+                .property-gallery {
+                    img {
+                        height: 1000px;
+                    }
+                }
+            }
+        }
+
+        .property-summary-section {
+            .openhouse-info {
+                h3 {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .property-summary {
+                 h1 {
+                    font-size: 7rem;
+                }
+
+                p {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        .school-email-section {
+            h3 {
+                font-size: 4.5rem;
+                margin-left: 30px;
+                margin-right: 150px;
+                top: 10px;
+            }
+
+            hr {
+                width: 100px;
+            }
+
+            .school-ratings {
+                img {
+                    height: 40px;
+                }
+
+                div {
+                    h3 {
+                        font-size: 3.7rem;
+                        margin: 0;
+                        margin: 10px 0;
+                    }
+
+                    img {
+                        margin: 10px 10px 20px 10px;
+
+                        &:first-of-type {
+                            margin-left: 0;
+                        }
+                    }
+
+                    &:last-of-type {
+                        margin-bottom: 20px;
+                    }
+                }
+
+            }
+
+            .email-form-group {
+                .form-input {
+                    border-radius: 3px;
+                    border-color: $upmidgrey;
+                    font-size: 1.7rem;
+                    margin: 55px 7vw;
+                    padding: 35px 30px;
+
+                    &::-webkit-input-placeholder {
+                        color: $upmidgrey;
+                        font-size: 1.7rem;
+                    }
+
+                    &::-moz-placeholder {
+                        color: $upmidgrey;
+                        font-size: 1.7rem;
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: $upmidgrey;
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+        }
+
+        .sharing-section {
+            p {
+                font-size: 2.7rem;
+            }
+        }
+    }
+
+    .properties-page {
+        .promotion-section {
+            h2 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+/* XL */
+/*
+@media screen
+and (min-width: 1441px)
+and (max-width: 1999px) {
+    .properties-page {
+        .promotion-section {
+            h2 {
+                font-size: 3.5rem;
+            }
+
+            p {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+/* MD */
+@media screen
+and (min-width: 992px)
+and (max-width: 1199px) {
+    .property-details-page {
+        .school-email-section {
+            flex-direction: column;
+            padding-left: 0;
+            padding-right: 0;
+            width: 100vw;
+
+            .school-ratings {
+                border-bottom: 3px solid $lightgrey;
+                border-right: none;
+                margin-left: 20vw;
+
+                header {
+                    align-items: center;
+                    display: flex;
+
+                    h3 {
+                        margin-top: 0;
+                    }
+
+                    img {
+                        height: 35px;
+
+                        &:last-of-type {
+                            margin-left: auto;
+                            margin-right: 20vw;
+                        }
+                    }
+                }
+            }
+
+            .email-form-group {
+                margin-left: 20vw;
+
+                h3 {
+                    margin-top: 45px;
+                }
+
+                h3, button, .form-input {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .properties-page {
+        hr {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* SM */
+@media screen
+and (min-width: 768px) {
+    .outline-btn {
+        border: 4px solid white;
+
+        &.dark {
+            border-color: $grey;
+            color: $grey;
+        }
+
+        &.gold {
+            border-color: $gold;
+        }
+    }
+
+    .property-details-page {
+        .school-email-section {
+            .school-ratings {
+                header {
+                    align-items: center;
+                    display: flex;
+
+                    h3 {
+                        margin-top: 0;
+                    }
+
+                    img {
+                        height: 35px;
+
+                        &:last-of-type {
+                            margin-left: auto;
+                            margin-right: 20vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .property-details-page {
+        .social {
+            padding-top: 50px;
+        }
+    }
+
+    .neighborhood-detail-page {
+        .local-feature {
+            .trends {
+                .section-subtitle {
+                    display: none;
+                }
+            }
+        }
+    }
+    footer {
+        padding-top: 100px;
+
+        .email-subscribe {
+            text-align: left;
+
+            input {
+                margin-top: 0;
+            }
+
+			button {
+				display: inline-block;
+				float: left;
+			}
+
+            a {
+                display: inline-block;
+                margin: 10px 0 0 35px;
+                float: left;
+            }
+        }
+
+        .footer-links {
+            h4 {
+                margin-top: 0;
+            }
+
+            a {
+                margin-bottom: 12px;
+            }
+        }
+
+        .copyright {
+            text-align: left;
+        }
+    }
+}
+
+/* XS to SM */
+@media screen
+and (max-width: 991px) {
+    .property-details-page {
+        .price-trends-section {
+            padding: 1px 10%;
+        }
+
+        .promotion-section {
+            padding-left: 10%;
+        }
+
+        .property-gallery-section {
+            flex-direction: column;
+
+            hr {
+                width: 50vw;
+            }
+
+            .map-container {
+                height: 100%;
+                width: 50vw;
+            }
+
+            .property-details {
+                flex-direction: row;
+                width: 100vw;
+
+                .property-info {
+                    height: 50vw;
+                    padding: 42.5px;
+                    width: 50vw;
+
+                    h3 {
+                        color: $lightgrey;
+                        font-size: 2rem;
+                        line-height: 10px;
+                        margin-left: 5%;
+                    }
+
+                    .outline-btn {
+                        margin: 20px 0 0 5%;
+                        width: 90%;
+                    }
+
+                    .price {
+                        font-size: 4rem;
+                        font-weight: 300;
+                        margin-top: 35.25px;
+                    }
+                }
+            }
+
+            .property-gallery-container {
+                width: 100vw;
+                height: auto;
+
+                .property-gallery {
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .property-gallery.related {
+            header {
+                flex-direction: column;
+
+                .section-title-dark {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    margin-left: 0;
+                    margin-bottom: 40px;
+                }
+            }
+
+        }
+
+        .school-email-section {
+            flex-direction: column;
+            padding-left: 0;
+            padding-right: 0;
+            width: 100vw;
+
+            hr:last-of-type {
+                border-bottom: 1px solid $lightgrey;
+                margin-bottom: 0;
+                width: 60vw;
+                visibility: visible;
+            }
+
+            .school-ratings {
+                border-right: none;
+                margin-left: 20vw;
+                width: 80vw;
+
+                header {
+                    align-items: center;
+                    display: flex;
+
+                    h3 {
+                        margin-top: 0;
+                    }
+
+                    img {
+                        height: 35px;
+
+                        &:last-of-type {
+                            margin-left: auto;
+                        }
+                    }
+                }
+            }
+
+            .email-form-group {
+                margin-left: 20vw;
+                width: 80vw;
+
+                .form-input {
+                    width: 60vw;
+                }
+
+                h3 {
+                    margin-top: 25px;
+                }
+
+                h3, button, .form-input {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .properties-search-section {
+        .arrow-down {
+            display: none;
+        }
+
+        .btn-group {
+            .btn {
+                margin: 0 auto 20px auto;
+                width: 100%;
+
+                &.has-label {
+                    margin-top: 20px;
+                }
+
+    			@include media('<tablet') {
+    				margin: 0 auto 15px;
+                    width: 90vw;
+    			}
+            }
+        }
+
+        .dropdown-menu {
+            // left: 5%;
+            top: 61%;
+        }
+
+        .outline-btn {
+            &.dark {
+                margin-left: 0;
+                width: 100%;
+            }
+
+        }
+
+        .search-group {
+            width: 100px;
+        }
+
+        .tab {
+            border: 1px solid $upmidgrey;
+            margin-bottom: 40px;
+        }
+
+        .vertical-line {
+            display: none;
+        }
+    }
+
+    .properties-page {
+        h1 {
+            &.section-title-dark {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+        }
+
+        .half-offset {
+            margin-left: 0;
+        }
+
+        .neighborhoods-info {
+            width: 100vw;
+
+            p {
+                width: 80vw;
+            }
+        }
+
+        .neighborhoods-img {
+            width: 100vw;
+        }
+
+        .neighborhoods-section {
+            flex-direction: column;
+        }
+    }
+    footer {
+
+        .email-subscribe {
+            a {
+                margin: 10px 0 0;
+            }
+        }
+    }
+}
+
+/* XS */
+@media screen
+and (max-width: 767px) {
+    .property-details-page {
+        .promotion-section {
+            padding-left: 10%;
+        }
+
+        .property-summary-section {
+            display: flex;
+            flex-direction: column-reverse;
+
+            .openhouse-info {
+                width: 100vw;
+
+                h3 {
+                    margin-left: 25px;
+                }
+            }
+        }
+
+        .school-email-section {
+            hr:last-of-type {
+                border-bottom: 1px solid $lightgrey;
+                margin-bottom: 0;
+                width: 80vw;
+                visibility: visible;
+            }
+
+            .school-ratings {
+                border-right: none;
+                margin-left: 10vw;
+                width: 80vw;
+
+                header {
+                    align-items: center;
+                    display: flex;
+
+                    h3 {
+                        margin-top: 0;
+                    }
+
+                    img {
+                        height: 35px;
+
+                        &:last-of-type {
+                            margin-left: auto;
+                        }
+                    }
+                }
+            }
+
+            .email-form-group {
+                margin-left: 10vw;
+                padding-right: 0;
+                width: 80vw;
+
+                button, .form-input {
+                    width: 100%;
+                }
+
+                h3, button, .form-input {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .property-details-page {
+        .social {
+            padding-top: 50px;
+        }
+    }
+
+    .properties-search-section {
+        .outline-btn {
+            &.dark {
+                margin-left: 15vw;
+                width: 70vw;
+            }
+        }
+
+        .search-form {
+            label {
+                margin-left: 15vw;
+            }
+						@include media('<tablet') {
+							label {
+								margin-left: 20px;
+							}
+						}
+        }
+
+        .search-input-container {
+            .search-input {
+                width: 90vw;
+                margin: 0 auto;
+            }
+            .placeholder{
+                left: 45px !important;
+            }
+        }
+    }
+
+    .properties-page {
+        .neighborhoods-info {
+            text-align: left;
+
+            hr {
+                margin: 40px 0 0 20px;
+								position: relative;
+								border-width: 1px;
+            }
+
+            h3 {
+                position: relative;
+								margin: 10px 0 0 20px;
+            }
+
+            h1 {
+							font-family: "Avenir-Light";
+              font-size: 4rem;
+              margin: 40px 20px 40px;
+            }
+
+            h3, p {
+              font-size: 1.3rem;
+            }
+
+            p {
+							font-family: "Avenir-Light";
+							font-size: 1.4rem;
+							text-transform: none;
+              margin: 0 20px;
+            }
+						a {
+							margin: 0 auto;
+							display: block;
+							text-align: center;
+
+							button {
+	              margin: 70px auto 30px;
+	            }
+						}
+        }
+    }
+    footer {
+    	input {
+    		max-width: 400px;
+    	}
+        button {
+        	display: block;
+        	margin: 0 auto;
+        	float: none;
+        }
+
+        a {
+            display: inline-block;
+            float: none;
+        }
+        .email-subscribe {
+        	a {
+        		margin: 10px auto 0;
+        	}
+        }
+        .footer-links {
+        	a {
+        		margin: 14px 0 0 15px;
+
+                h4 {
+                    margin-left: 0px;
+                }
+            }
+
+        	h4 {
+        		margin: 50px 0 25px 15px;
+        	}
+        }
+        .copyright {
+        	a {
+        		margin-left: 0;
+        	}
+        }
+    }
+}
+
+/* XXS */
+@media screen
+and (max-width: 669px) {
+    .property-details-page {
+        .price-trends-section {
+            h3 {
+                font-size: 2rem;
+            }
+
+            .section-title-dark {
+                font-size: 4rem;
+            }
+        }
+
+        .property-gallery-section {
+            flex-direction: column-reverse;
+
+            hr {
+                width: 100vw;
+            }
+
+            .map-container {
+                width: 100vw;
+            }
+
+            .property-details {
+                flex-direction: column;
+                width: 100vw;
+
+                .property-info {
+                    height: 367px;
+                    padding: 42.5px;
+                    width: 100vw;
+
+                    h3 {
+                        color: $lightgrey;
+                        font-size: 1.5rem;
+                        line-height: 10px;
+                        margin-left: 5%;
+                    }
+
+                    .outline-btn {
+                        margin: 20px 0 0 5%;
+                        width: 90%;
+                    }
+
+                    .price {
+                        font-size: 3rem;
+                        font-weight: 300;
+                        margin-top: 25.25px;
+                    }
+                }
+            }
+        }
+
+        .sharing-section {
+            .social-links {
+                img {
+                    margin: 0 25px;
+                }
+            }
+        }
+    }
+}
+
+/* MOBILE */
+@media screen
+and (max-width: 376px) {
+    .properties-page {
+        .neighborhoods-info {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .neighborhoods-page {
+        .cities-list {
+            margin-top: -60px;
+            padding-top: 130px;
+            padding-left: 25px;
+
+            .half-divider {
+                margin-bottom: 40px;
+            }
+
+            .cities {
+                h3 {
+                    margin-bottom: 45px;
+
+                    a {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            .back-box {
+                width: 85px;
+                height: 85px;
+                left: 15%;
+                bottom: -40px;
+                z-index: 10;
+            }
+        }
+
+        .sf-interactive-map {
+            .sf-neighborhoods {
+                padding-left: 25px;
+
+                h3 {
+                    margin-top: 75px;
+                }
+            }
+        }
+
+        .contact-section {
+            padding-top: 50px;
+
+            h1.section-title-dark {
+                width: 100%;
+                font-size: 3.2rem;
+								line-height: 1.1;
+                margin-left: 0;
+                margin-right: 35px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    .neighborhood-detail-page {
+        .about {
+            margin-bottom: 75px;
+
+            .description-main {
+                padding-top: 35px;
+                padding-left: 25px;
+
+                h1 {
+									font-size: 5.2rem;
+                    margin: 30px 0 20px;
+                }
+
+                p {
+                    margin-bottom: 25px;
+                }
+            }
+
+            .image-slideshow {
+                margin-bottom: 75px;
+            }
+
+            .map {
+                padding: 0 25px;
+            }
+
+            .description-alt {
+                padding: 25px 25px 0;
+            }
+        }
+
+        .local-feature {
+            .blog-post {
+                height: 450px;
+                padding-top: 75px;
+                padding-right: 60px;
+                padding-bottom: 25px;
+                padding-left: 25px;
+            }
+
+            .trends {
+                padding: 50px 40px 0;
+
+                h2.subheader {
+                    margin-bottom: 15px;
+                }
+
+                .section-subtitle {
+                    color: white;
+                    border-bottom-color: white;
+                    float: left;
+                    margin-top: 15px;
+                }
+            }
+
+            .feature-description {
+                padding: 35px 25px 75px;
+
+                p {
+                    width: 100%;
+                }
+            }
+        }
+
+        .price-trends-section {
+            .section-title-dark {
+                margin-top: 35px;
+            }
+
+            h3 {
+                margin-bottom: 25px;
+            }
+
+            img {
+                margin-bottom: 50px;
+            }
+        }
+
+        .school-email-section {
+            h3 {
+                margin-right: 40px;
+            }
+
+            .school-ratings {
+                margin-left: 7vw;
+                width: 90vw;
+            }
+        }
+
+        .school-email-section {
+            flex-direction: column;
+            padding-left: 0;
+            padding-right: 0;
+            width: 100vw;
+
+            hr:last-of-type {
+                border-bottom: 1px solid $lightgrey;
+                margin-bottom: 0;
+                width: 60vw;
+                visibility: visible;
+            }
+
+            .school-ratings {
+                border-right: none;
+                margin-left: 7vw;
+                width: 90vw;
+
+                header {
+                    align-items: center;
+                    display: flex;
+
+                    h3 {
+                        margin-top: 0;
+                    }
+
+                    img {
+                        height: 35px;
+
+                        &:last-of-type {
+                            margin-left: auto;
+                        }
+                    }
+                }
+            }
+
+            .email-form-group {
+                margin-left: 10vw;
+                padding-right: 0;
+                width: 80vw;
+
+                button, .form-input {
+                    width: 100%;
+                }
+
+                h3, button, .form-input {
+                    margin-left: 0;
+                }
+            }
+
+            h3 {
+                text-align: center;
+                margin-top: 75px;
+                margin-right: 40px;
+            }
+        }
+
+        .contact-section {
+            background: $lightestgrey;
+            color: $darkgrey;
+            padding-top: 75px;
+
+            h1.section-title {
+                color: $darkgrey;
+                font-size: 3.2rem;
+								width: calc(100% - 30px);
+                margin: 0 15px 25px;
+            }
+
+            p {
+                width: 85%;
+            }
+
+            .outline-btn {
+                color: $darkgrey;
+                border-color: $darkgrey;
+                margin-bottom: 75px;
+            }
+        }
+
+        .neighborhood-gallery.related {
+            h1.section-title-dark {
+                font-size: 28px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    footer {
+        .copyright {
+            .logo {
+                width: 270px;
+            }
+        }
+    }
+
+    .property-details-page {
+        .agent-section {
+            .property-description {
+                width: 100%;
+            }
+        }
+
+        .price-trends-section {
+            h3 {
+                font-size: 1.7rem;
+            }
+
+            .section-title-dark {
+                font-size: 3.7rem;
+            }
+        }
+
+        .promotion-section {
+            padding-left: 5%;
+            text-align: center;
+
+            hr, p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            p {
+                margin-bottom: 30px;
+            }
+        }
+
+        .school-email-section {
+            h3 {
+                margin-right: 40px;
+            }
+
+            .school-ratings {
+                margin-left: 7vw;
+                width: 90vw;
+            }
+        }
+
+        .sharing-section {
+            text-align: left;
+
+            .section-title-dark {
+                // width: 60%;
+            }
+
+            .social-links {
+                margin-left: 10%;
+
+                img {
+                    margin: 0 15px;
+                }
+            }
+        }
+    }
+
+}
