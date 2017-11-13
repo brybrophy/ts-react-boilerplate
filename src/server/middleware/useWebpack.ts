@@ -1,10 +1,11 @@
-import * as webpack from 'webpack';
 import * as express from 'express';
 import * as path from 'path';
-const config = require('../../../webpack.config');
-const compiler = webpack(config);
 
 export default function(app) {
+	const webpack = require('webpack');
+	const config = require('../../../webpack.config');
+	const compiler = webpack(config);
+
 	app.use(
 		require('webpack-dev-middleware')(compiler, {
 			noInfo: true,

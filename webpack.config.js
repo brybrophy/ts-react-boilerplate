@@ -152,13 +152,13 @@ module.exports = {
 		fs: 'empty',
 		net: 'empty',
 		tls: 'empty'
-	},
+	}
 
 	// ------------------------------------
 	// Externals
 	// ------------------------------------
-	externals: {
-		react: 'React',
-		'react-dom': 'ReactDOM'
-	}
+	// externals: {
+	// 	react: 'React',
+	// 	'react-dom': 'ReactDOM'
+	// }
 };

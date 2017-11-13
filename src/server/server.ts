@@ -24,11 +24,11 @@ import * as compression from 'compression';
 import * as cookieParser from 'cookie-parser';
 import * as express from 'express';
 import * as path from 'path';
-import renderView from './middleware/renderView';
 import definePort from './middleware/definePort';
 import enableLogging from './middleware/enableLogging';
-import useWebpack from './middleware/useWebpack';
+import renderView from './middleware/renderView';
 import RootStore from '../common/mobx/stores';
+import useWebpack from './middleware/useWebpack';
 
 const port = definePort();
 
