@@ -11,6 +11,7 @@ const env = process.env.NODE_ENV;
 const { ifProduction, ifDevelopment } = getIfUtils(env);
 
 console.log(`Using ${chalk.bold.cyan(env)} Webpack Configuration`);
+console.log();
 
 module.exports = {
 	// ------------------------------------
@@ -151,13 +152,13 @@ module.exports = {
 		fs: 'empty',
 		net: 'empty',
 		tls: 'empty'
-	}
+	},
 
 	// ------------------------------------
 	// Externals
 	// ------------------------------------
-	// externals: {
-	// 	react: 'React',
-	// 	'react-dom': 'ReactDOM'
-	// }
+	externals: {
+		react: 'React',
+		'react-dom': 'ReactDOM'
+	}
 };

@@ -108,7 +108,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-	console.log(`Paragon Public Website Express Server Starting Up`);
+	console.log(`Express Server Starting Up`);
 	console.log(` - START TIME (LOC): ${chalk.bold.green(new Date().toString())}`);
 	console.log(` - START TIME (UTC): ${chalk.bold.green(new Date().toUTCString())}`);
 	console.log(` - PORT: ${chalk.bold.green(port)}`);
