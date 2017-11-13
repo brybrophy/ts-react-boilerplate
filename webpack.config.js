@@ -64,7 +64,7 @@ module.exports = {
 				output: { path: path.join(__dirname, 'dist') }
 			}
 		}),
-		new CopyWebpackPlugin([{ from: './public' }]),
+		new CopyWebpackPlugin([{ from: 'favicon.ico' }]),
 		new AssetsWebpackPlugin({ path: path.join(__dirname, 'src/server/config') }),
 		ifDevelopment(new webpack.NamedModulesPlugin()),
 		ifDevelopment(new webpack.HotModuleReplacementPlugin()),
@@ -106,7 +106,12 @@ module.exports = {
 				test: /\.scss|css$/,
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
-					use: ['css-loader', 'postcss-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
+					use: [
+						{ loader: 'css-loader', options: { sourceMap: true } },
+						{ loader: 'postcss-loader', options: { sourceMap: true } },
+						{ loader: 'resolve-url-loader', options: { sourceMap: true } },
+						{ loader: 'sass-loader', options: { sourceMap: true } }
+					]
 				})
 			},
 			{

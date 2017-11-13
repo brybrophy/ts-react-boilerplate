@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-export default class HomePage extends React.Component {
+export default class HomePage extends React.Component<any, any> {
 	render() {
-		return <h1>Home Page</h1>;
+		const { count } = this.props.rootStore;
+
+		return <h1>{count} were added to the count on the server</h1>;
 	}
 }

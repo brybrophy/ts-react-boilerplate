@@ -1,98 +1,141 @@
 body {
-    font-family: 'Avenir-Book';
-    color: $grey;
+	font-family: 'Roboto';
+	color: $grey;
 }
 
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
-    padding-right: 0;
-    padding-left: 0;
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
+	padding-right: 0;
+	padding-left: 0;
 }
 
 button:focus {
-    outline: 0;
+	outline: 0;
 }
 
 .absolute-image {
-    left: 0;
-    min-height: 100%;
-    position: absolute;
-    top: 0;
-    min-width: 100%;
-}
-
-.bold {
-    font-family: 'Avenir-Medium';
+	left: 0;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	min-width: 100%;
 }
 
 .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .row {
-    margin: 0;
+	margin: 0;
 }
 
 .container {
-    padding: 0;
+	padding: 0;
 }
 
 section {
-    background: white;
-    height: inherit;
-    width: 100%;
-    text-align: center;
+	background: white;
+	height: inherit;
+	width: 100%;
+	text-align: center;
 }
 
 p {
-    line-height: 1.4;
-    font-size: 16px;
-    font-weight: 300;
+	line-height: 1.4;
+	font-size: 16px;
+	font-weight: 300;
 }
 
 h1.section-title {
-    color: white;
-    font-size: 50px;
-    font-weight: 400;
-    line-height: 1.35;
-    letter-spacing: 1px;
-    margin: 100px 40px 75px;
+	color: white;
+	font-size: 50px;
+	font-weight: 400;
+	line-height: 1.35;
+	letter-spacing: 1px;
+	margin: 100px 40px 75px;
 }
 
 h1.section-title-dark {
-    @extend h1.section-title;
-    color: $grey;
+	@extend h1.section-title;
+	color: $grey;
 }
 
 h2.subheader {
-    text-transform: uppercase;
-    text-align: left;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 15px;
-    margin-left: 25px;
+	text-transform: uppercase;
+	text-align: left;
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 0;
+	margin-bottom: 15px;
+	margin-left: 25px;
 }
 
 h3 {
-    font-size: 16px;
-    font-weight: 400;
+	font-size: 16px;
+	font-weight: 400;
 }
 
 .half-offset {
-    margin-left: 2%
+	margin-left: 2%;
 }
 
 .flexy {
-    display: flex;
+	display: flex;
 }
 
 .invisable {
-    display: none;
+	display: none;
 }
 
 .opaque {
-    opacity: 0.5;
+	opacity: 0.5;
 }
 
 .reg-mark {
@@ -102,26 +145,26 @@ h3 {
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px; /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
 
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
 
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
 
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+	/* Support for IE. */
+	font-feature-settings: 'liga';
 }

@@ -27,7 +27,8 @@ export default function renderView(req: Request, rootStore: any) {
                     <meta charset="utf-8">
                     <title>React Express TypeScript Starter</title>
                     <link rel="stylesheet" type="text/css" href="/assets/styles.css">
-
+					<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900i" rel="stylesheet">
+					
                     <!-- PHP script to remove date from meta description on Google -->
                     <script language="javascript">
                         document.write("<?php the_time('F j, Y') ?>");
