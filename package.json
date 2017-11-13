@@ -4,8 +4,10 @@
 	"description": "A starter project using Exress, React, and TypeScript",
 	"main": "src/index.js",
 	"scripts": {
-		"build:dev": "rimraf ./dist && webpack --env.dev",
-		"build:prod": "rimraf ./dist && webpack --env.prod -p"
+		"start:dev": "cross-env NODE_ENV=development ts-node src/server/server.ts",
+		"start:prod": "cross-env NODE_ENV=production ts-node src/server/server.ts --fast",
+		"build:dev": "rimraf ./dist && cross-env NODE_ENV=development webpack",
+		"build:prod": "rimraf ./dist && cross-env NODE_ENV=production webpack -p"
 	},
 	"author": "Bryan Brophy",
 	"license": "MIT",
