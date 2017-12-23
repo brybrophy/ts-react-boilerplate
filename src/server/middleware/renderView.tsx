@@ -10,17 +10,17 @@ import { StaticRouter as Router } from 'react-router-dom';
 import Routes from '../../common/routes';
 
 export default function renderView(req: Request, rootStore: any) {
-	const context = {};
+    const context = {};
 
-	const componentHTML = renderToString(
-		<Provider rootStore={rootStore}>
-			<Router location={req.originalUrl} context={context}>
-				<Routes />
-			</Router>
-		</Provider>
-	);
+    const componentHTML = renderToString(
+        <Provider rootStore={rootStore}>
+            <Router location={req.originalUrl} context={context}>
+                <Routes />
+            </Router>
+        </Provider>
+    );
 
-	let HTML = `
+    let HTML = `
         <!DOCTYPE html>
             <html>
                 <head>
@@ -34,8 +34,8 @@ export default function renderView(req: Request, rootStore: any) {
                         document.write("<?php the_time('F j, Y') ?>");
                     </script>`;
 
-	if (process.env.NODE_ENV !== 'production') {
-		HTML += `
+    if (process.env.NODE_ENV !== 'production') {
+        HTML += `
                 </head>
                 <body>
                     <div id="root"></div>
@@ -43,8 +43,8 @@ export default function renderView(req: Request, rootStore: any) {
                 </body>
             </html>
         `;
-	} else {
-		HTML += `
+    } else {
+        HTML += `
 				<!-- Add initial mobx state to window object -->
 				<script>
 					window.__INITIAL_STATE__ = ${CircularJson.stringify({ rootStore: rootStore })};
@@ -52,11 +52,13 @@ export default function renderView(req: Request, rootStore: any) {
                 </head>
                 <body>
                     <div id="root">${componentHTML}</div>
-                    <script type="application/javascript" src=${hashedAssetsPaths.main.js}></script>
+                    <script type="application/javascript" src=${
+                        hashedAssetsPaths.main.js
+                    }></script>
                 </body>
             </html>
         `;
-	}
+    }
 
-	return HTML;
+    return HTML;
 }

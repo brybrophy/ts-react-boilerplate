@@ -1,12 +1,20 @@
 ('use strict');
 
 import chalk from 'chalk';
-console.log(chalk.bold.cyan('**********************************************************'));
-console.log(chalk.bold.cyan('**************Bootstrapping The Application***************'));
+console.log(
+    chalk.bold.cyan(
+        '**********************************************************'
+    )
+);
+console.log(
+    chalk.bold.cyan(
+        '**************Bootstrapping The Application***************'
+    )
+);
 
 // Require environment variables from .env file when not in production
 if (process.env.NODE_ENV !== 'production') {
-	require('dotenv').config({ silent: true });
+    require('dotenv').config({ silent: true });
 }
 
 // Get env variables. Must happen after requiring dotenv.
@@ -16,7 +24,7 @@ const seoEnv = process.env.SEO_ENV;
 
 // Fake window object if it does not exist
 if (!global['window']) {
-	global['window'] = {};
+    global['window'] = {};
 }
 
 import * as bodyParser from 'body-parser';
@@ -45,16 +53,16 @@ app.use(compression());
 enableLogging(app);
 
 if (nodeEnv === 'development') {
-	useWebpack(app);
+    useWebpack(app);
 }
 
 // CSRF protection
 app.use('/api', (req, res, next) => {
-	if (/json/.test(req.get('Accept'))) {
-		return next();
-	}
+    if (/json/.test(req.get('Accept'))) {
+        return next();
+    }
 
-	res.sendStatus(406);
+    res.sendStatus(406);
 });
 
 // Parse json from body
@@ -67,15 +75,15 @@ app.use(cookieParser());
 // This will ensure chached assets are replaced when their content changes.
 // 2592000 == seconds in a month
 if (nodeEnv !== 'development') {
-	app.use(
-		express.static(path.resolve(__dirname, '..', '..', 'dist'), {
-			setHeaders: function(res, path) {
-				if (path && path.indexOf('static') !== -1) {
-					res.setHeader('Cache-Control', 'public, max-age=2592000');
-				}
-			}
-		})
-	);
+    app.use(
+        express.static(path.resolve(__dirname, '..', '..', 'dist'), {
+            setHeaders: function(res, path) {
+                if (path && path.indexOf('static') !== -1) {
+                    res.setHeader('Cache-Control', 'public, max-age=2592000');
+                }
+            }
+        })
+    );
 }
 
 // Serve static assets and images
@@ -85,49 +93,63 @@ app.use('/images', express.static(path.resolve(__dirname, 'images')));
 //robots.txt file to prevent google from indexing subdomain
 const robotsText = seoEnv === 'production' ? 'Allow' : 'Disallow';
 app.get('/robots.txt', (req, res, next) => {
-	res.type('text/plain');
-	res.send(`User-agent: *\n${robotsText}: /`);
+    res.type('text/plain');
+    res.send(`User-agent: *\n${robotsText}: /`);
 });
 
 // Send HTML file with bundle.js for all requests that make it this far
 app.use('/*', (req, res) => {
-	const rootStore = new RootStore();
+    const rootStore = new RootStore();
 
-	rootStore.addOne();
-	rootStore.addOne();
+    rootStore.addOne();
+    rootStore.addOne();
 
-	res.setHeader('Content-Type', 'text-plain');
-	res.write(renderView(req, rootStore));
-	res.end();
+    res.setHeader('Content-Type', 'text-plain');
+    res.write(renderView(req, rootStore));
+    res.end();
 });
 
 // Catch-all error handling route. Any error passed into next() will end up here.
 app.use((err, req, res, next) => {
-	console.error(err.stack);
-	res.sendStatus(500);
+    console.error(err.stack);
+    res.sendStatus(500);
 });
 
 app.listen(port, () => {
-	console.log(`Express Server Starting Up`);
-	console.log(` - START TIME (LOC): ${chalk.bold.green(new Date().toString())}`);
-	console.log(` - START TIME (UTC): ${chalk.bold.green(new Date().toUTCString())}`);
-	console.log(` - PORT: ${chalk.bold.green(port)}`);
-	console.log(` - NODE_ENV: ${chalk.bold.green(nodeEnv)}`);
-	console.log(` - API_ENV: ${chalk.bold.green(apiEnv)}`);
-	console.log(` - SEO_ENV: ${chalk.bold.green(seoEnv)}`);
-	console.log(` - ROBOTS TEXT: ${chalk.bold.green(robotsText)}`);
-	console.log(` - URL: ${chalk.bold.green('http://localhost:3000')}`);
-	console.log();
-	if (nodeEnv == 'development') {
-		console.log(` *Using WEBPACK DEV MIDDLEWARE for STATIC BUILD ASSETS*`);
-	} else {
-		console.log(` *Using STATIC BUILD ASSETS*`);
-	}
-	console.log(chalk.bold.cyan('**********************************************************'));
-	console.log(chalk.bold.cyan('**********************************************************'));
+    console.log(`Express Server Starting Up`);
+    console.log(
+        ` - START TIME (LOC): ${chalk.bold.green(new Date().toString())}`
+    );
+    console.log(
+        ` - START TIME (UTC): ${chalk.bold.green(new Date().toUTCString())}`
+    );
+    console.log(` - PORT: ${chalk.bold.green(port)}`);
+    console.log(` - NODE_ENV: ${chalk.bold.green(nodeEnv)}`);
+    console.log(` - API_ENV: ${chalk.bold.green(apiEnv)}`);
+    console.log(` - SEO_ENV: ${chalk.bold.green(seoEnv)}`);
+    console.log(` - ROBOTS TEXT: ${chalk.bold.green(robotsText)}`);
+    console.log(` - URL: ${chalk.bold.green('http://localhost:3000')}`);
+    console.log();
+    if (nodeEnv == 'development') {
+        console.log(` *Using WEBPACK DEV MIDDLEWARE for STATIC BUILD ASSETS*`);
+    } else {
+        console.log(` *Using STATIC BUILD ASSETS*`);
+    }
+    console.log(
+        chalk.bold.cyan(
+            '**********************************************************'
+        )
+    );
+    console.log(
+        chalk.bold.cyan(
+            '**********************************************************'
+        )
+    );
 
-	if (nodeEnv === 'development') {
-		console.log();
-		console.log(chalk.bold.magenta('Webpack is bundling. This may take a minute...'));
-	}
+    if (nodeEnv === 'development') {
+        console.log();
+        console.log(
+            chalk.bold.magenta('Webpack is bundling. This may take a minute...')
+        );
+    }
 });
