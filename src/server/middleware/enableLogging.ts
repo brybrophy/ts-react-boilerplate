@@ -1,16 +1,17 @@
 'use strict';
 
+import { Application } from 'express';
 import * as morgan from 'morgan';
 
-// Use differrent levels of logging based on the environemt.
-export default function enableLogging(app) {
-    switch (app.get('env')) {
+// Use differrent levels of logging based on the environment.
+export default function enableLogging(server: Application) {
+    switch (server.get('env')) {
         case 'development':
-            app.use(morgan('dev'));
+            server.use(morgan('dev'));
             break;
 
         case 'production':
-            app.use(morgan('short'));
+            server.use(morgan('short'));
             break;
 
         default:

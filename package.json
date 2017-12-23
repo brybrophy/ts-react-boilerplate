@@ -21,6 +21,7 @@
     "author": "Bryan Brophy",
     "license": "MIT",
     "devDependencies": {
+        "@types/node": "^8.5.2",
         "assets-webpack-plugin": "^3.5.1",
         "autoprefixer": "^7.1.6",
         "awesome-typescript-loader": "^3.3.0",
