@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import Home from '../containers/Home';
 import NotFound from '../containers/NotFound';
 
+// @withRouter
 @inject('rootStore')
-@withRouter
 @observer
 export default class Routes extends React.Component {
     render() {

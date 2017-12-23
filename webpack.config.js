@@ -69,9 +69,6 @@ module.exports = {
             }
         }),
         new CopyWebpackPlugin([{ from: 'favicon.ico' }]),
-        new AssetsWebpackPlugin({
-            path: path.join(__dirname, 'src/server/config')
-        }),
         ifDevelopment(new webpack.NamedModulesPlugin()),
         ifDevelopment(new webpack.HotModuleReplacementPlugin()),
         ifProduction(
@@ -82,6 +79,9 @@ module.exports = {
                 },
                 sourceMap: true
             })
+        ),
+        ifProduction(
+            new AssetsWebpackPlugin({ path: path.join(__dirname, 'dist') })
         )
     ]),
 

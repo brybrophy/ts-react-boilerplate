@@ -11,9 +11,11 @@ console.log(
 import * as express from 'express';
 import createConfig from './config';
 import dumpServerLog from './config/dumpConfig';
+import registerMiddleware from './middleware';
 
 const server = express();
 server.locals.CFG = createConfig();
+registerMiddleware(server);
 
 const ENV = server.locals.CFG.ENV;
 

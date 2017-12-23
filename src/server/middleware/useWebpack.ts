@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as path from 'path';
 
-export default function(app) {
+export default function useWebpack(app) {
     const webpack = require('webpack');
     const config = require('../../../webpack.config');
     const compiler = webpack(config);
