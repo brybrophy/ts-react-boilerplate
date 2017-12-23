@@ -36,6 +36,7 @@ export default function registerMiddleware(server: Application) {
     // Send HTML file with bundle.js for all requests that make it this far
     server.use('/*', (req, res) => {
         const rootStore = new RootStore();
+
         res.setHeader('Content-Type', 'text/html');
         renderView(req, res, rootStore);
     });
