@@ -56,7 +56,11 @@ module.exports = {
                 NODE_ENV: ifProduction("'production'", "'development'")
             }
         }),
-        new ExtractTextPlugin('assets/styles.css'),
+        new ExtractTextPlugin({
+            filename: 'assets/styles.css',
+            allChunks: true,
+            disable: env !== 'production'
+        }),
         new webpack.LoaderOptionsPlugin({
             test: /\.scss$/,
             debug: true,
