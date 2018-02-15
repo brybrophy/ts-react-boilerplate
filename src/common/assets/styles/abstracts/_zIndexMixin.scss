@@ -1,0 +1,14 @@
+$z-index: (
+    none: 0,
+    low: 100,
+    medium: 500,
+    high: 1000
+);
+
+@function z-index($key) {
+    @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+    z-index: z-index($key);
+}

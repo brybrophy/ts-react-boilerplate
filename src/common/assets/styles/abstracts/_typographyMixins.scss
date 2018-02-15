@@ -1,0 +1,20 @@
+@mixin smoothing {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@function type-scale($level) {
+    @return map-get(
+    map-get($type-settings, $level), 'font-size');
+}
+
+@function line-height($level) {
+    @return map-get(
+    map-get($type-settings, $level), 'line-height');
+}
+
+@mixin type-setting($level) {
+    font-size: type-scale($level);
+    line-height: line-height($level);
+}
