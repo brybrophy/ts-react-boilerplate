@@ -8,7 +8,6 @@ import enableLogging from './enableLogging';
 import registerRobots from './registerRobots';
 import renderView from './renderView';
 import useWebpack from './useWebpack';
-import RootStore from '../../common/mobx/stores';
 
 // Fake window object if it does not exist
 if (!global.window) {
@@ -35,10 +34,8 @@ export default function registerMiddleware(server: Application) {
 
     // Send HTML file with bundle.js for all requests that make it this far
     server.use('/*', (req, res) => {
-        const rootStore = new RootStore();
-
         res.setHeader('Content-Type', 'text/html');
-        renderView(req, res, rootStore);
+        renderView(req, res);
     });
 
     server.use((err, req, res, next) => {

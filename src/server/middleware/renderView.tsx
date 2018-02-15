@@ -7,17 +7,23 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter as Router } from 'react-router-dom';
 import { Provider, useStaticRendering } from 'mobx-react';
 import Routes from '../../common/routes';
+import Stores from '../../common/stores';
 
-export default function renderView(req: Request, res: Response, rootStore) {
+export default function renderView(req: Request, res: Response) {
     const { ASSETS, CACHE, Q } = req.app.locals.CFG;
     const HA = ASSETS.WEBPACK.HashedAssets.data;
     const staticContext = { status: null };
 
     useStaticRendering(true);
 
+    const stores = new Stores({});
+
+    stores.homePage.counter.addOne();
+    stores.homePage.counter.addOne();
+
     const componentHTML = Q.shouldBundleAssets()
         ? renderToString(
-              <Provider rootStore={rootStore}>
+              <Provider stores={stores}>
                   <Router location={req.originalUrl} context={staticContext}>
                       <Routes />
                   </Router>
@@ -37,10 +43,9 @@ export default function renderView(req: Request, res: Response, rootStore) {
                     <script language="javascript">
                         document.write("<?php the_time('F j, Y') ?>");
                     </script>
-                    <!-- Add initial mobx state to window object -->
-                    <script>
+					<script>
                         window.__INITIAL_STATE__ = ${CircularJson.stringify({
-                            rootStore: rootStore
+                            stores: stores
                         })};
                     </script>
                 </head>
