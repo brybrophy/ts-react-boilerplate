@@ -1,16 +1,17 @@
 import * as React from 'react';
+import HomePageStore from '../stores/containers/HomePageStore';
 
 export default class HomePage extends React.Component {
-    private _stores: any;
+    private _store: HomePageStore;
 
     constructor(props) {
         super(props);
 
-        this._stores = props.stores.homePage;
+        this._store = props.stores.homePageStore;
     }
 
     render() {
-        const { countDisplay } = this._stores;
+        const { countDisplay } = this._store;
 
         return <h1>{countDisplay}</h1>;
     }

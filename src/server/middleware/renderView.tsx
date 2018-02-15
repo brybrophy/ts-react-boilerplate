@@ -18,8 +18,9 @@ export default function renderView(req: Request, res: Response) {
 
     const stores = new Stores({});
 
-    stores.homePage.counter.addOne();
-    stores.homePage.counter.addOne();
+    // Add 2 to the counter on server to test data hydration on client.
+    stores.homePageStore.counter.addOne();
+    stores.homePageStore.counter.addOne();
 
     const componentHTML = Q.shouldBundleAssets()
         ? renderToString(

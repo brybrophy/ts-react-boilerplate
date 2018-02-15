@@ -1,7 +1,7 @@
 import { computed, observable } from 'mobx';
 import Counter from '../common/Counter';
 
-export default class HomePage {
+export default class HomePageStore {
     counter = new Counter();
     @observable title: string = 'The home page count is';
 

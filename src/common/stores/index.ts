@@ -1,9 +1,9 @@
-import HomePage from './containers/HomePage';
+import HomePageStore from './containers/HomePageStore';
 
 export default class Stores {
-    homePage: HomePage;
+    homePageStore: HomePageStore;
 
     constructor(state) {
-        this.homePage = new HomePage(state.homePage);
+        this.homePageStore = new HomePageStore(state.homePageStore);
     }
 }
