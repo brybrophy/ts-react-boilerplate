@@ -1,0 +1,19 @@
+// example 1: @include slide(up, 125ms, 100%);
+// example 2: No distance required for "off" @include slide(off, 125ms);
+
+@function slide($direction, $distance) {
+    $slide: (
+        down: translateY($distance),
+        left: translateX(-$distance),
+        off: translate($distance, $distance),
+        right: translateX($distance),
+        up: translateY(-$distance)
+    );
+
+    @return map-get($slide, $direction);
+}
+
+@mixin slide($direction, $speed, $distance: 0) {
+    transform: slide($direction, $distance);
+    transition: transform $speed ease-in-out;
+}
