@@ -1,15 +1,16 @@
 // Sass tools and helpers
+@import 'abstracts/variables';
 @import 'abstracts/caroucelMixins';
 @import 'abstracts/depthMixin';
 @import 'abstracts/mediaMixins';
 @import 'abstracts/slideMixin';
 @import 'abstracts/typographyMixins';
-@import 'abstracts/variables';
 @import 'abstracts/zIndexMixin';
 
 // External libraries and frameworks
 @import 'vendors/normalize';
 
 // Boilerplate code for project OR standard sitewide styles
+@import 'base/reset';
 @import 'base/colors';
 @import 'base/base';
