@@ -65,3 +65,10 @@ h6 {
 small {
     @include type-setting(-1);
 }
+
+textarea,
+input {
+    &:focus {
+        outline: none;
+    }
+}

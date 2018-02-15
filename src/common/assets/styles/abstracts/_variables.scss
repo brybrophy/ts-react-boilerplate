@@ -9,11 +9,11 @@ $base-font-size: 1rem;
 $base-line-height: 1.5 * $base-font-size;
 
 $type-settings: (
-    -1: (font-size: 1.2rem, line-height: $base-line-height),
-    0: (font-size: 1.4rem, line-height: $base-line-height),
+    -1: (font-size: 1.2rem, line-height: $base-line-height * 2),
+    0: (font-size: 1.4rem, line-height: $base-line-height * 2),
     1: (font-size: 1.6rem, line-height: $base-line-height * 2),
     2: (font-size: 1.8rem, line-height: $base-line-height * 2),
-    3: (font-size: 2.8rem, line-height: $base-line-height * 2),
-    4: (font-size: 3.6rem, line-height: $base-line-height * 2),
-    5: (font-size: 4.8rem, line-height: $base-line-height * 2)
+    3: (font-size: 2.8rem, line-height: $base-line-height * 3),
+    4: (font-size: 3.6rem, line-height: $base-line-height * 3),
+    5: (font-size: 4.8rem, line-height: $base-line-height * 4)
 );
