@@ -1,21 +1,21 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
-import Home from '../containers/Home';
-import NotFound from '../containers/NotFound';
+import HomePage from '../containers/HomePage';
+import NotFoundPage from '../containers/NotFoundPage';
 
-// @withRouter
-@inject('rootStore')
+@inject('stores')
 @observer
 export default class Routes extends React.Component {
     render() {
         return (
             <Switch>
-                {/* HomePage */}
-                <Route exact path="/" render={() => <Home {...this.props} />} />
-
-                {/* 404 Error page */}
-                <Route component={NotFound} />
+                <Route
+                    exact
+                    path="/"
+                    render={() => <HomePage {...this.props} />}
+                />
+                <Route component={NotFoundPage} />
             </Switch>
         );
     }
