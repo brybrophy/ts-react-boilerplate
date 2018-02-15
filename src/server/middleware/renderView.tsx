@@ -21,6 +21,9 @@ export default function renderView(req: Request, res: Response) {
     // Add 2 to the counter on server to test data hydration on client.
     stores.homePageStore.counter.addOne();
     stores.homePageStore.counter.addOne();
+    stores.homePageStore.setTitle(
+        '2 added to count on server. Count is increasing on the client...'
+    );
 
     const componentHTML = Q.shouldBundleAssets()
         ? renderToString(

@@ -1,5 +1,5 @@
-import { computed, observable } from 'mobx';
-import { cloneDeep } from 'lodash';
+import { action, computed, observable } from 'mobx';
+import { merge } from 'lodash';
 import Counter from '../common/Counter';
 
 export default class HomePageStore {
@@ -7,11 +7,16 @@ export default class HomePageStore {
     @observable title: string = 'The home page count is';
 
     constructor(state) {
-        cloneDeep([this, state]);
+        merge(this, state);
     }
 
     @computed
     get countDisplay() {
         return `${this.title} ${this.counter.count}`;
+    }
+
+    @action
+    setTitle(nextTitle: string) {
+        this.title = nextTitle;
     }
 }
