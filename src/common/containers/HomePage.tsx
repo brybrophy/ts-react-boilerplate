@@ -13,6 +13,16 @@ export default class HomePage extends React.Component {
     render() {
         const { countDisplay } = this._store;
 
-        return <h1>{countDisplay}</h1>;
+        return (
+            <div>
+                <h1>{countDisplay}</h1>
+                <h2>{countDisplay}</h2>
+                <h3>{countDisplay}</h3>
+                <h4>{countDisplay}</h4>
+                <h5>{countDisplay}</h5>
+                <h6>{countDisplay}</h6>
+                <small>{countDisplay}</small>
+            </div>
+        );
     }
 }

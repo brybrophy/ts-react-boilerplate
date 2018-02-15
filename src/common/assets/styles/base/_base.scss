@@ -6,6 +6,7 @@
 
 html {
     box-sizing: border-box;
+    font-size: 62.5%;
 }
 
 body {
@@ -33,4 +34,34 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+h1 {
+    @include type-setting(5);
+}
+
+h2 {
+    @include type-setting(4);
+}
+
+h3 {
+    @include type-setting(3);
+}
+
+h4,
+Blockquote {
+    @include type-setting(2);
+}
+
+h5,
+p {
+    @include type-setting(1);
+}
+
+h6 {
+    @include type-setting(0);
+}
+
+small {
+    @include type-setting(-1);
 }
