@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { observer } from 'mobx-react';
 import HomePageStore from '../stores/containers/HomePageStore';
 
+@observer
 export default class HomePage extends React.Component {
     private _store: HomePageStore;
 
@@ -8,6 +10,18 @@ export default class HomePage extends React.Component {
         super(props);
 
         this._store = props.stores.homePageStore;
+    }
+
+    componentDidMount() {
+        this.handleIncrementCount();
+    }
+
+    handleIncrementCount() {
+        this._store.counter.addOne();
+
+        setTimeout(() => {
+            this.handleIncrementCount();
+        }, 2000);
     }
 
     render() {

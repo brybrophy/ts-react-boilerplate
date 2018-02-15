@@ -1,4 +1,5 @@
 import { computed, observable } from 'mobx';
+import { cloneDeep } from 'lodash';
 import Counter from '../common/Counter';
 
 export default class HomePageStore {
@@ -6,7 +7,7 @@ export default class HomePageStore {
     @observable title: string = 'The home page count is';
 
     constructor(state) {
-        Object.assign(this, state);
+        cloneDeep([this, state]);
     }
 
     @computed
