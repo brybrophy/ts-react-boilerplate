@@ -10,13 +10,13 @@ import Routes from '../common/routes';
 import Stores from '../common/stores';
 
 declare var window: {
-    __INITIAL_STATE__: { stores: Object };
+    __INITIAL_STATE__: {};
     location: {
         pathname: string;
     };
 };
 
-const stores = new Stores(window.__INITIAL_STATE__.stores);
+const stores = new Stores(window.__INITIAL_STATE__);
 const container = document.getElementById('root');
 const renderApp = component =>
     render(

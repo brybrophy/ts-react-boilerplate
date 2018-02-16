@@ -25,7 +25,7 @@ export default function renderView(req: Request, res: Response) {
         '2 added to count on server. Count is increasing on the client...'
     );
 
-    const state = prune({ stores }, { inheritedProperties: true });
+    const state = prune(stores, { inheritedProperties: true });
 
     const componentHTML = Q.shouldBundleAssets()
         ? renderToString(
