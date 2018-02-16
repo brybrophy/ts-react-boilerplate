@@ -1,7 +1,7 @@
 'use strict';
 
 import * as React from 'react';
-import * as CircularJson from 'circular-json';
+import * as prune from 'json-prune';
 import { Request, Response } from 'express';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter as Router } from 'react-router-dom';
@@ -24,6 +24,8 @@ export default function renderView(req: Request, res: Response) {
     stores.homePageStore.setTitle(
         '2 added to count on server. Count is increasing on the client...'
     );
+
+    const state = prune({ stores }, { inheritedProperties: true });
 
     const componentHTML = Q.shouldBundleAssets()
         ? renderToString(
@@ -48,9 +50,7 @@ export default function renderView(req: Request, res: Response) {
                         document.write("<?php the_time('F j, Y') ?>");
                     </script>
 					<script>
-                        window.__INITIAL_STATE__ = ${CircularJson.stringify({
-                            stores: stores
-                        })};
+                        window.__INITIAL_STATE__ = ${state};
                     </script>
                 </head>
                 <body>
