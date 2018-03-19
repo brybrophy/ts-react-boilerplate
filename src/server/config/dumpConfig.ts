@@ -1,6 +1,12 @@
 import chalk from 'chalk';
+import { IServerLogProps } from '../../common/interfaces';
 
-export default function dumpServerLog({ apiEnv, nodeEnv, port, seoEnv }) {
+export default function dumpServerLog({
+    apiEnv,
+    nodeEnv,
+    port,
+    seoEnv
+}: IServerLogProps) {
     console.log(`Express Server Starting Up`);
     console.log(
         ` - START TIME (LOC): ${chalk.bold.green(new Date().toString())}`

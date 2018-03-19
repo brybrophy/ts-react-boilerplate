@@ -1,22 +1,22 @@
 import { action, computed, observable } from 'mobx';
 import { merge } from 'lodash';
-import Counter from '../common/Counter';
+import CounterStore from '../common/CounterStore';
 
 export default class HomePageStore {
-    counter = new Counter();
-    @observable title: string = 'The home page count is';
+    public counter = new CounterStore();
+    @observable public title: string = 'The home page count is';
 
-    constructor(state) {
+    public constructor(state: HomePageStore | {}) {
         merge(this, state);
     }
 
     @computed
-    get countDisplay() {
+    public get countDisplay(): string {
         return `${this.title} ${this.counter.count}`;
     }
 
     @action
-    setTitle(nextTitle: string) {
+    public setTitle(nextTitle: string): void {
         this.title = nextTitle;
     }
 }

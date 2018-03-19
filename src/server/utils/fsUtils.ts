@@ -1,7 +1,7 @@
-import * as FS from 'fs';
-import * as path from 'path';
+import FS from 'fs';
+import path from 'path';
 
-export function fileExists(filePath) {
+export function fileExists(filePath: string) {
     try {
         return FS.statSync(filePath).isFile();
     } catch (err) {
@@ -11,7 +11,7 @@ export function fileExists(filePath) {
     }
 }
 
-export function readJsonSyncIfExists(filePath) {
+export function readJsonSyncIfExists(filePath: string) {
     if (!fileExists(filePath)) {
         console.log(`File [${path.resolve(filePath)}] does not exist`);
 
@@ -21,7 +21,7 @@ export function readJsonSyncIfExists(filePath) {
     return JSON.parse(FS.readFileSync(filePath, 'utf8'));
 }
 
-export function readJsonSync(filePath) {
+export function readJsonSync(filePath: string) {
     if (!fileExists(filePath)) {
         throw new Error(`File [${path.resolve(filePath)}] does not exist`);
     }

@@ -1,7 +1,7 @@
 'use strict';
 
 import { Application } from 'express';
-import * as morgan from 'morgan';
+import morgan from 'morgan';
 
 // Use differrent levels of logging based on the environment.
 export default function enableLogging(server: Application) {

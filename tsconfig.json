@@ -1,18 +1,15 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "lib": ["es6", "dom"],
-        "noImplicitAny": false,
-        "sourceMap": true,
         "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
         "experimentalDecorators": true,
-        "moduleResolution": "node",
-        "noUnusedLocals": true,
-        "rootDir": "src/",
-        "outDir": "dist/",
-        "jsx": "react"
+        "jsx": "react",
+        "module": "commonjs",
+        "strict": true,
+        "target": "es5"
     },
-    "compileOnSave": false,
-    "exclude": ["node_modules"]
+    "parcelTsPluginOptions": {
+        "transpileOnly": false
+    },
+    "exclude": ["node_modules", "test", "dist"]
 }

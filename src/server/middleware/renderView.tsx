@@ -1,7 +1,7 @@
 'use strict';
 
-import * as React from 'react';
-import * as prune from 'json-prune';
+import React from 'react';
+import prune from 'json-prune';
 import { Request, Response } from 'express';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter as Router } from 'react-router-dom';
@@ -11,12 +11,12 @@ import Stores from '../../common/stores';
 
 export default function renderView(req: Request, res: Response) {
     const { ASSETS, CACHE, Q } = req.app.locals.CFG;
-    const HA = ASSETS.WEBPACK.HashedAssets.data;
+    const hashedAssets = ASSETS.WEBPACK.HashedAssets.data;
     const staticContext = { status: null };
 
     useStaticRendering(true);
 
-    const stores = new Stores({});
+    const stores = new Stores();
 
     // Add 2 to the counter on server to test data hydration on client.
     stores.homePageStore.counter.addOne();
@@ -56,7 +56,7 @@ export default function renderView(req: Request, res: Response) {
                 <body>
                     <div id="root">${componentHTML}</div>
                     <script type="application/javascript" src="${
-                        HA.main.js
+                        hashedAssets.main.js
                     }"></script>
                 </body>
             </html>

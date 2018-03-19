@@ -1,13 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 import { inject, observer } from 'mobx-react';
-import HomePageStore from '../stores/containers/HomePageStore';
+import { IHomePageProps, IHomePageStore } from '../interfaces';
 
 @inject('stores')
 @observer
 export default class HomePage extends React.Component {
-    private _store: HomePageStore;
+    private _store: IHomePageStore;
 
-    constructor(props) {
+    constructor(props: IHomePageProps) {
         super(props);
 
         this._store = props.stores.homePageStore;

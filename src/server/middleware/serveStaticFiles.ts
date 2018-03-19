@@ -1,13 +1,15 @@
-import * as Express from 'express';
-import * as path from 'path';
+import Express from 'express';
+import { Application } from 'express';
+import path from 'path';
 
-export default function configureStaticFileServer(server: Express.Application) {
+export default function configureStaticFileServer(server: Application) {
     const { ASSETS, CACHE } = server.locals.CFG;
     const distDir = ASSETS.DIRS.dist;
 
-    function setCacheControlByPath(res, path, stat) {
-        function urlStartsWith(text) {
-            return res.req.url.indexOf(text) == 0;
+    // TODO: Figure out how to properly type this instance of "res"
+    function setCacheControlByPath(res: any, path: string, stat: any) {
+        function urlStartsWith(text: string) {
+            return res.req.originalUrl.indexOf(text) == 0;
         }
 
         if (urlStartsWith('/images')) {

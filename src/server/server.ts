@@ -8,7 +8,7 @@ console.log(
     chalk.bold.cyan('*********Bootstrapping The Application**********')
 );
 
-import * as express from 'express';
+import express from 'express';
 import createConfig from './config';
 import dumpServerLog from './config/dumpConfig';
 import registerMiddleware from './middleware';

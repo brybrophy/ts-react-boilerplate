@@ -1,7 +1,8 @@
-import * as express from 'express';
-import * as path from 'path';
+import express from 'express';
+import { Router } from 'express';
+import path from 'path';
 
-export default function useWebpack(app) {
+export default function useWebpack(app: Router) {
     const webpack = require('webpack');
     const config = require('../../../webpack.config');
     const compiler = webpack(config);

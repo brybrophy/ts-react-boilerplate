@@ -1,7 +1,7 @@
-import * as bodyParser from 'body-parser';
-import * as cookieParser from 'cookie-parser';
-import * as compression from 'compression';
-import { Application } from 'express';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import compression from 'compression';
+import { Application, Response, Request, NextFunction } from 'express';
 
 import configureStaticFileServer from './serveStaticFiles';
 import enableLogging from './enableLogging';
@@ -33,13 +33,15 @@ export default function registerMiddleware(server: Application) {
     registerRobots(server);
 
     // Send HTML file with bundle.js for all requests that make it this far
-    server.use('/*', (req, res) => {
+    server.use('/*', (req: Request, res: Response) => {
         res.setHeader('Content-Type', 'text/html');
         renderView(req, res);
     });
 
-    server.use((err, req, res, next) => {
-        console.error(err.stack);
-        res.sendStatus(500);
-    });
+    server.use(
+        (err: Error, req: Request, res: Response, next: NextFunction) => {
+            console.error(err.stack);
+            res.sendStatus(500);
+        }
+    );
 }

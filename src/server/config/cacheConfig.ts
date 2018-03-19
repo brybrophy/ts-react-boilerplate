@@ -5,7 +5,7 @@
 // Contrary to Expires, this directive is relative to the time of the request.
 //
 
-export function getCacheControl(ageInSeconds) {
+export function getCacheControl(ageInSeconds: number) {
     return {
         header: `public, max-age=${ageInSeconds}`,
         ageInSeconds: ageInSeconds
