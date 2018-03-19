@@ -1,5 +1,11 @@
 import chalk from 'chalk';
-import { IServerLogProps } from '../../common/interfaces';
+
+export interface IServerLogProps {
+    apiEnv: string;
+    nodeEnv: string;
+    port: string;
+    seoEnv: string;
+}
 
 export default function dumpServerLog({
     apiEnv,

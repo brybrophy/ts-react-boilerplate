@@ -5,13 +5,11 @@
 }
 
 @function type-scale($level) {
-    @return map-get(
-    map-get($type-settings, $level), 'font-size');
+    @return map-get(map-get($type-settings, $level), 'font-size');
 }
 
 @function line-height($level) {
-    @return map-get(
-    map-get($type-settings, $level), 'line-height');
+    @return map-get(map-get($type-settings, $level), 'line-height');
 }
 
 @mixin type-setting($level) {

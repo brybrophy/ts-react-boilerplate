@@ -1,6 +1,10 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { IHomePageProps, IHomePageStore } from '../interfaces';
+import { IStores, IHomePageStore } from '../stores/index.d';
+
+export interface IHomePageProps {
+    stores: IStores;
+}
 
 @inject('stores')
 @observer
