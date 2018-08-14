@@ -1,35 +1,29 @@
-require('../common/assets/styles/main.scss');
+import './assets/styles/main.scss';
+import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'mobx-react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
-import Routes from '../common/routes';
-import Stores from '../common/stores';
+import App from './App';
+import Stores from './stores';
 
-declare var window: {
-    __INITIAL_STATE__?: Stores;
-    location: {
-        pathname: string;
-    };
-};
-
-const stores = new Stores(window.__INITIAL_STATE__);
+const stores = new Stores();
 const container = document.getElementById('root');
-const renderApp = (component: typeof Routes) =>
+const renderApp = (component: typeof App) =>
     render(
         <AppContainer>
             <Provider stores={stores}>
                 <Router>
-                    <Routes />
+                    <App />
                 </Router>
             </Provider>
         </AppContainer>,
         container
     );
 
-renderApp(Routes);
+renderApp(App);
 
 if (module.hot) {
-    module.hot.accept(() => renderApp(Routes));
+    module.hot.accept(() => renderApp(App));
 }

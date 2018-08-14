@@ -3,13 +3,12 @@
         "emitDecoratorMetadata": true,
         "esModuleInterop": true,
         "experimentalDecorators": true,
-        "jsx": "react",
-        "module": "commonjs",
+        "jsx": "preserve",
+        "module": "esnext",
+        "sourceMap": true,
         "strict": true,
-        "target": "es5"
-    },
-    "parcelTsPluginOptions": {
-        "transpileOnly": false
+        "target": "es5",
+        "lib": ["esnext", "dom"]
     },
     "exclude": ["node_modules", "test", "dist"]
 }

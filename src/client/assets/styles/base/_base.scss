@@ -1,0 +1,110 @@
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
+    min-height: 100vh;
+    margin: 0;
+    overflow-y: scroll;
+    font-family: $font-1;
+    color: $text-color-1;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+#root,
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+h1 {
+    @include type-setting(5);
+}
+
+h2 {
+    @include type-setting(4);
+}
+
+h3 {
+    @include type-setting(3);
+}
+
+h4,
+blockquote {
+    @include type-setting(2);
+}
+
+h5,
+p {
+    @include type-setting(1);
+}
+
+h6 {
+    @include type-setting(0);
+}
+
+small {
+    @include type-setting(-2);
+}
+
+textarea,
+input {
+    &:focus {
+        outline: none;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    color: #252525;
+    text-decoration: none;
+
+    &:hover,
+    &:visited,
+    &:active,
+    &:focus {
+        text-decoration: none;
+        color: #252525;
+    }
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #999;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Remove input styles from iOS */
+input,
+textarea {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
