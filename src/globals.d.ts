@@ -3,8 +3,10 @@ declare module '*.json' {
     export default content;
 }
 
+declare module 'chalk';
 declare module 'cloudinary-react';
 declare module 'countup.js';
+declare module 'forcedomain';
 declare module 'react-cursor-position';
 declare module 'react-imported-component';
 declare module 'react-plx';

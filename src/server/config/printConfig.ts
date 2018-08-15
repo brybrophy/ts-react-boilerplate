@@ -7,7 +7,7 @@ export interface IServerLogProps {
     seoEnv: string;
 }
 
-export default function dumpServerLog({
+export default function printServerLog({
     apiEnv,
     nodeEnv,
     port,
@@ -24,12 +24,6 @@ export default function dumpServerLog({
     console.log(` - NODE_ENV: ${chalk.bold.green(nodeEnv)}`);
     console.log(` - API_ENV: ${chalk.bold.green(apiEnv)}`);
     console.log(` - SEO_ENV: ${chalk.bold.green(seoEnv)}`);
-    console.log();
-    if (nodeEnv == 'development') {
-        console.log(` *Using WEBPACK DEV MIDDLEWARE for STATIC BUILD ASSETS*`);
-    } else {
-        console.log(` *Using STATIC BUILD ASSETS*`);
-    }
     console.log(
         chalk.bold.cyan(
             '**********************************************************'
@@ -40,11 +34,4 @@ export default function dumpServerLog({
             '**********************************************************'
         )
     );
-
-    if (nodeEnv === 'development') {
-        console.log();
-        console.log(
-            chalk.bold.magenta('Webpack is bundling. This may take a minute...')
-        );
-    }
 }
