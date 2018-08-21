@@ -1,10 +1,10 @@
 import chalk from 'chalk';
 
 export interface IServerLogProps {
-    apiEnv: string;
-    nodeEnv: string;
-    port: string;
-    seoEnv: string;
+    apiEnv?: string;
+    nodeEnv?: string;
+    port?: number;
+    seoEnv?: string;
 }
 
 export default function printServerLog({
