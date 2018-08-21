@@ -1,6 +1,6 @@
 {
     "name": "high-seas-ts-express-react-starter",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "description": "A starter project using Exress, React, and TypeScript",
     "main": "src/index.js",
     "scripts": {
