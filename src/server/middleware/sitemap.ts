@@ -13,7 +13,7 @@ export default (_req: Request, res: Response, _next: NextFunction): any => {
         urls
     });
 
-    return sitemap.toXML((err, xml) =>
+    return sitemap.toXML((err: Error, xml: XMLDocument) =>
         err ? res.status(500).end() : res.type('application/xml').send(xml)
     );
 };

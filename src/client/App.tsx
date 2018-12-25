@@ -4,10 +4,10 @@ import importedComponent from 'react-imported-component';
 
 // ---- Dynamic Imports for Code splitting ---- //
 const HomePage = importedComponent(() => import('./components/HomePage'));
-HomePage.preload();
 
-const NotFoundPage = importedComponent(() => import('./components/NotFoundPage'));
-NotFoundPage.preload();
+const NotFoundPage = importedComponent(() =>
+    import('./components/NotFoundPage')
+);
 // ------------------- End ------------------- //
 
 export default class App extends React.Component {

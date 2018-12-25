@@ -3,16 +3,8 @@ declare module '*.json' {
     export default content;
 }
 
-declare module 'autobind-decorator';
 declare module 'chalk';
-declare module 'cloudinary-react';
-declare module 'countup.js';
-declare module 'forcedomain';
-declare module 'react-cursor-position';
-declare module 'react-imported-component';
-declare module 'react-plx';
-declare module 'react-scroll';
-declare module 'react-visibility-sensor';
+declare module 'sitemap';
 
 declare namespace NodeJS {
     export interface Global {
