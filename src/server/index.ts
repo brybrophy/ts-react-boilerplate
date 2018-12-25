@@ -11,7 +11,6 @@ console.log(
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
-import forceDomain from 'forcedomain';
 import morgan from 'morgan';
 import path from 'path';
 import express, { Application, Response, Request, NextFunction } from 'express';
@@ -33,25 +32,12 @@ app.set('strict routing', true);
 app.use(compression());
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(
-    require('prerender-node')
-        .set('prerenderToken', process.env.PRERENDER_TOKEN)
-        .set('protocol', 'https')
-);
 
 if (app.get('env') === 'development') {
     app.use(morgan('dev'));
 } else {
     app.use(morgan('short'));
 }
-
-app.use(
-    forceDomain({
-        hostname: 'www.highseas.com',
-        protocol: 'https',
-        excludeRule: /[a-zA-Z0-9][a-zA-Z0-9-]+\.herokuapp\.com/i
-    })
-);
 
 for (const route of staticRedirects) {
     app.use(route.from, (_req: Request, res: Response) => {

@@ -3,7 +3,7 @@ import chalk from 'chalk';
 export interface IServerLogProps {
     apiEnv?: string;
     nodeEnv?: string;
-    port?: number;
+    port?: number | string;
     seoEnv?: string;
 }
 

@@ -3,6 +3,7 @@ declare module '*.json' {
     export default content;
 }
 
+declare module 'autobind-decorator';
 declare module 'chalk';
 declare module 'cloudinary-react';
 declare module 'countup.js';
