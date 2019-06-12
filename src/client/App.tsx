@@ -1,5 +1,6 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { FC } from 'react';
+import { hot } from 'react-hot-loader';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import importedComponent from 'react-imported-component';
 
 // ---- Dynamic Imports for Code splitting ---- //
@@ -10,16 +11,18 @@ const NotFoundPage = importedComponent(() =>
 );
 // ------------------- End ------------------- //
 
-export default class App extends React.Component {
-    render() {
-        return (
-            <div id="app">
+const App: FC<{}> = () => {
+    return (
+        <div id="app">
+            <Router>
                 <Switch>
                     <Route exact path="/" component={HomePage} />
                     <Route exact path="/not-found" component={NotFoundPage} />
                     <Route component={NotFoundPage} />
                 </Switch>
-            </div>
-        );
-    }
-}
+            </Router>
+        </div>
+    );
+};
+
+export default hot(module)(App);
